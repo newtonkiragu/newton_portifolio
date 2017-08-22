@@ -1,0 +1,8 @@
+<%= render "layouts/errors", :object => @skill %>
+<%= form_for @skill do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, required: true%>
+	<%= f.label :description %>
+	<%= f.text_field :description, required: true %><br><br>
+	<%= f.submit class: 'btn black waves-effect waves-light' %>
+<% end %>

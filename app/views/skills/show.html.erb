@@ -1,0 +1,12 @@
+<div class="container">
+	<h4 class="center-align"><%= @skill.name %></h4>
+	<% if @skill.projects.any? %>
+	<ol>
+		<% @skill.projects.each do |project| %>
+		<li><%= link_to project.name, skill_project_path(@skill, project) %></li>
+		<% end %>
+	</ol>
+	<% else %>
+	<p class="center-align">No projects</p>
+	<% end %>
+</div>

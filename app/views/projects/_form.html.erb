@@ -1,0 +1,7 @@
+<%= render "layouts/errors", :object => @project %>
+<%= form_for [@skill, @project], html: { multipart: true } do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, required: true%>
+	<%= f.file_field :image %><br><br>
+	<%= f.submit class: 'btn black waves-effect waves-light' %>
+<% end %>

@@ -1,5 +1,5 @@
 class PortifolioController < ApplicationController
   def index
-    render :index
+    @skills = Skill.all
   end
 end

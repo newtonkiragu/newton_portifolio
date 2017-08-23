@@ -1,0 +1,12 @@
+<% if current_user.admin? %>
+<div class="container">
+<h3>Editing Article</h3>
+
+<%= render 'form', article: @article %>
+
+<%= link_to 'Show', @article %> |
+<%= link_to 'Back', articles_path %>
+</div>
+<% else %>
+	<p class="center">YOU ARE NOT ADMIN :)</p>
+<% end %>

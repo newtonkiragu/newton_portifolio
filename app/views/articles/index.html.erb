@@ -1,0 +1,22 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <br>
+  <% @articles.each do |article| %>
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">weekend</i><%= article.title %></div>
+      <div class="collapsible-body">
+        <span><p><%= truncate(article.body, length: 140) %></p> <%= link_to 'Read more', article %>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>|
+            <%= link_to 'Edit', edit_article_path(article) %> |
+            <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' } %> |
+            <%= link_to 'New Article', new_article_path %>
+          <% end %>
+        <% end %>
+      </span>
+    </div>
+  </li>
+</ul>
+<% end %>
+</div>

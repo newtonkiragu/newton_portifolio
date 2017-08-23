@@ -16,27 +16,24 @@ Newton Kiragu
 
 - System dependencies
 
-  > Requires ruby installed in your System Requires postgres database installed Requires nodejs installed in the system
+  > Requires ruby installed in your System 
+  > Requires postgres database installed 
+  > Requires nodejs installed in the system
 
 - Configuration
-
-- Clone the repo: `$ git clone [URL]`
-
-- Install dependencies: `$ bundle`
+ Clone the repo: `$ git clone [URL]`
+ Install dependencies: `$ bundle`
 
 - Database creation
-
-- Create the databases: `$ rails db:create`
+  Create the databases: `$ rails db:create`
 
 - Database initialization
-
-- Create the tables: `$ rails db:migrate`
+  Create the tables: `$ rails db:migrate`
 
 - How to run the test suite
-
-- Use `$ rspec` to run tests
+  Use `$ rspec` to run tests
 
 - Deployment instructions
-
-- Run the app: `$ rails server`
-- Navigate to <http://localhost:3000/>
+  Run the app: `$ rails server`
+  Navigate to <http://localhost:3000/>
+  link to [deployed site](vast-chamber-13215.herokuapp.com)

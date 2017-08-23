@@ -30,10 +30,10 @@ Newton Kiragu
 - Database initialization
   Create the tables: `$ rails db:migrate`
 
-- How to run the test suite
+- How to run the test suite:
   Use `$ rspec` to run tests
 
-- Deployment instructions
+- Deployment instructions:
   Run the app: `$ rails server`
   Navigate to <http://localhost:3000/>
   link to [deployed site](vast-chamber-13215.herokuapp.com)

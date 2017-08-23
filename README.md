@@ -1,24 +1,42 @@
-# README
+# Portifolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README is a step by step doccumentation on how to get the website up and running on your local machine.
 
-Things you may want to cover:
+## Author
 
-* Ruby version
+Newton Kiragu
 
-* System dependencies
+### Techologies used
 
-* Configuration
+- [`Ruby 2.3.3`](https://www.ruby-lang.org/en/)
+- [`Rails 5.1.3`](http://guides.rubyonrails.org/getting_started.html)
+- [`RSpec 3.6`](http://rspec.info/)
+- [`Postgres`](https://www.postgresql.org/)
+- [`Materialize`](http://materializecss.com/)
 
-* Database creation
+- System dependencies
 
-* Database initialization
+  > Requires ruby installed in your System Requires postgres database installed Requires nodejs installed in the system
 
-* How to run the test suite
+- Configuration
 
-* Services (job queues, cache servers, search engines, etc.)
+- Clone the repo: `$ git clone [URL]`
 
-* Deployment instructions
+- Install dependencies: `$ bundle`
 
-* ...
+- Database creation
+
+- Create the databases: `$ rails db:create`
+
+- Database initialization
+
+- Create the tables: `$ rails db:migrate`
+
+- How to run the test suite
+
+- Use `$ rspec` to run tests
+
+- Deployment instructions
+
+- Run the app: `$ rails server`
+- Navigate to <http://localhost:3000/>

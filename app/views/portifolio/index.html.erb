@@ -12,6 +12,7 @@
 
 <div id="skills" class="section scrollspy">
   <h1>I am Proficient in the following skills</h1>
+  <% if @skills.any? %>
   <ul class="collection">
     <% @skills.each do |skill| %>
     <li class="collection-item avatar">
@@ -24,6 +25,10 @@
     </li>
     <% end %>
     </ul>
+    <% else %>
+    <h5>There are no skills yet</h5>
+    <p><%= link_to "Add a new skill", new_skill_path %></p>
+    <% end %>
 </div>
 
 <div id="projects" class="section scrollspy">

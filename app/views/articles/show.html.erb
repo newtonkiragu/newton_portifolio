@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="container">
+		<p id="notice"><%= notice %></p><br>
+		<h3><%= @article.title %></h3>
+		<p class="article_body">
+			<%= @article.body %>
+		</p>
+		<% if user_signed_in? %>
+		<% if current_user.admin? %>
+		<%= link_to 'Edit', edit_article_path(@article) %> |
+		<%= link_to 'Back', articles_path %>
+		<% end %>
+		<% end %>
+		<div class="comments_container">
+			<h4>Comments</h4>
+			<div id="comments_id">
+				<%= render @article.comments %>
+			</div>
+			<% if !user_signed_in? %>
+			<p class="inline">Sign in to comment</p> |
+			<a href="/users/sign_in" class="inline">Sign in</a>
+			<br><br>
+			<% else %>
+			<%= link_to "Add comment", new_article_comment_path(@article), id: "new_link", remote:true %>
+			<% end %>
+		</div>
+	</div>
+</div>

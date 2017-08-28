@@ -24,77 +24,44 @@
       <% end %>
     </li>
     <% end %>
-    </ul>
-    <% else %>
-    <h5>There are no skills yet</h5>
-    <p><%= link_to "Add a new skill", new_skill_path %></p>
-    <% end %>
+  </ul>
+<% else %>
+  <h5>There are no skills yet</h5>
+  <p><%= link_to "Add a new skill", new_skill_path %></p>
+  <% end %>
 </div>
 
 <div id="projects" class="section scrollspy">
   <h2 class="center">Projects</h2>
   <div class="row">
     <div class="col s4">
-
+      <% if @projects.any? %>
+      <% @projects.each do |project| %>
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://static.pexels.com/photos/36675/pexels-photo.jpg" style="width:300px; height:250px;">
+          <%= image_tag project.image.url, class: 'activator' %>
+
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i>
+          <span class="card-title activator grey-text text-darken-4"><%= project.name %>
+            <i class="material-icons right">more_vert</i>
           </span>
           <p>
             <a href="#">This is a link</a>
           </p>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i>
+          <span class="card-title grey-text text-darken-4"><%= project.name %>
+            <i class="material-icons right">close</i>
           </span>
           <p>Here is some more information about this product that is only revealed once clicked on.</p>
         </div>
       </div>
-    </div>
-
-    <div class="col s4">
-
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://static.pexels.com/photos/36675/pexels-photo.jpg" style="width:425px; height:250px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i>
-          </span>
-          <p>
-            <a href="#">This is a link</a>
-          </p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i>
-          </span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col s4">
-
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://static.pexels.com/photos/36675/pexels-photo.jpg" style="width:300px; height:250px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i>
-          </span>
-          <p>
-            <a href="#">This is a link</a>
-          </p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i>
-          </span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
+      <% end %>
+    <% else %>
+      <h5>There are no Projects yet</h5>
+      <p><%= link_to "Add a new project", skills_path %></p>
+      <% end %>
     </div>
 
   </div>

@@ -1,17 +1,22 @@
 <div class="parallax-container">
   <div class="parallax" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://static.pexels.com/photos/35884/amazing-beautiful-beauty-blue.jpg) no-repeat center center fixed;">
-    <h2 class="center" style="color: white; padding-top: 100px;">The complexity Of Simplicity</h2>
+    <h2 class="center" style="color: white; padding-top: 100px;">Newton Kiragu</h2>
   </div>
 </div>
 
 <div id="about" class="section scrollspy">
-  <h2>About</h2>
-  <h5>Hi there. I am Newton, pleased to meet you. I am a programmber mainly focused on fullstack web development.<br>
-    Outside coding and taking coffee, i really like photography, skating and nature.</h5>
+  <div class="container">
+
+  <h4 class="center">About</h4>
+  <p>Hi there. I am Newton, pleased to meet you. I am a fullstack web developer. That is to mean i am a programmer who focuses mostly on making websites
+  <br>
+  When I am not typing away on my keyboard, i am cooking, going for a walk and taking photographs.
+  <br>I am passionate about technology and the greate changes it has brought to this world of ours. It is just amazing</p>
+  </div>
 </div>
 
 <div id="skills" class="section scrollspy">
-  <h1>I am Proficient in the following skills</h1>
+  <h4>I am Proficient in the following skills</h4>
   <% if @skills.any? %>
   <ul class="collection">
     <% @skills.each do |skill| %>
@@ -34,9 +39,9 @@
 <div id="projects" class="section scrollspy">
   <h2 class="center">Projects</h2>
   <div class="row">
+    <% if @projects.any? %>
+    <% @projects.each do |project| %>
     <div class="col s4">
-      <% if @projects.any? %>
-      <% @projects.each do |project| %>
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <%= image_tag project.image.url, class: 'activator' %>
@@ -57,16 +62,38 @@
           <p>Here is some more information about this product that is only revealed once clicked on.</p>
         </div>
       </div>
-      <% end %>
-    <% else %>
-      <h5>There are no Projects yet</h5>
-      <p><%= link_to "Add a new project", skills_path %></p>
-      <% end %>
     </div>
+    <% end %>
+  <% else %>
+    <h5>There are no Projects yet</h5>
+    <p><%= link_to "Add a new project", skills_path %></p>
+    <% end %>
 
   </div>
 </div>
 
-<div id="contact" class="section scrollspy">
-  <h2>Here is where you will contact me from again, really soon</h2>
+<div id="contact" class="section scrollspy parallax center" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://static.pexels.com/photos/35884/amazing-beautiful-beauty-blue.jpg) no-repeat center center fixed;">
+  <h3>CONTACT ME</h3>
+  <a href="mailto:karanunewton4@gmail.com">Karanunewton4@gmail.com</a>
+  <div class="container">
+    <div class="row contact-me">
+      <div class="col md-3">
+      <a href="https://twitter.com/KiraguNewton" target="_blank"><img src="http://icons.iconarchive.com/icons/emey87/social-button/64/twitter-icon.png" alt="twitter"></a>
+      </div>
+      <div class="col md-3">
+        <a href="https://www.linkedin.com/in/newton-kiragu/" target="_blank"><img src="http://icons.iconarchive.com/icons/hopstarter/puck/64/Linked-In-icon.png" alt="linkedin"></a>
+      </div>
+      <div class="col md-3">
+        <a href="https://github.com/newtonkiragu" target="_blank"><img src="http://icons.iconarchive.com/icons/limav/flat-gradient-social/64/Github-icon.png" alt="github"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="center">
+      <%= link_to 'Add Reference', new_reference_path, class: 'btn black white-text waves-effect waves-light', remote: true, id: "add_reference" %>
+    </p>
+    <div class="references">
+      <%= render 'references/reference' %>
+    </div>
+  </div>
 </div>

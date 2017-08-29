@@ -1,0 +1,7 @@
+<% @references.each do |ref| %>
+	<ul class="collection with-header">
+		<li class="collection-header"><h5><%= ref.name %></h5></li>
+		<li class="collection-item"><%= ref.body %></li>
+		<li class="collection-item"><%= ref.email %></li>
+	</ul>
+<% end %>

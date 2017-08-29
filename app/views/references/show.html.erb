@@ -1,0 +1,12 @@
+<div class="container margin-top">
+	<div class="container center">
+		<p id="notice"><%= notice %></p>
+		<ul class="collection with-header">
+			<li class="collection-header"><h4><%= @reference.name %></h4></li>
+			<li class="collection-item"> <%= @reference.body %></li>
+			<li class="collection-item"><%= @reference.email %></li>
+		</ul>
+		<%= link_to 'Edit', edit_reference_path(@reference) %> |
+		<%= link_to 'Back', references_path %>
+	</div>
+</div>

@@ -10,6 +10,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified JavaScript -->
   </head>
@@ -43,73 +44,84 @@
             <li>
               <a href="/#contact" style="color: black;">CONTACT US</a>
             </li>
+            <% if current_user.nil? %>
+            <li><%= link_to new_user_session_path, class: 'login-button' do %>SIGN IN<% end %></li>
+          <% else %>
+            <li><%= link_to articles_url, class: 'login-button' do %>BLOG<% end %></li>
+            <li><%= link_to "SIGN OUT", destroy_user_session_url, :method => :delete, class: 'login-button'%></li>
+            <% end %>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li>
+              <a href="/#about" style="color: black;">ABOUT</a>
+            </li>
+            <li>
+              <a href="/#skills" style="color: black;">SKILLS</a>
+            </li>
+            <li>
+              <a href="/#projects" style="color: black;">PROJECTS</a>
+            </li>
+            <li>
+              <a href="/#contact" style="color: black;">CONTACT US</a>
+            </li>
+            <% if current_user.nil? %>
+            <li><%= link_to new_user_session_path, class: 'login-button' do %>SIGN IN<% end %></li>
+          <% else %>
+            <li><%= link_to articles_url, class: 'login-button' do %>BLOG<% end %></li>
+            <li><%= link_to "Sign out", destroy_user_session_url, :method => :delete, class: 'login-button'%></li>
+            <% end %>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <%= yield %>
+  </body>
+  <footer class="page-footer black">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li>
+              <a href="/#about" class="grey-text text-lighten-3">ABOUT</a>
+            </li>
+            <li>
+              <a href="/#skills" class="grey-text text-lighten-3">SKILLS</a>
+            </li>
+            <li>
+              <a href="/#projects" class="grey-text text-lighten-3">PROJECTS</a>
+            </li>
+            <li>
+              <a href="/#contact" class="grey-text text-lighten-3">CONTACT US</a>
+            </li>
           </li>
+          <br>
           <li>
+            <a href="/" class="grey-text text-lighten-3">BACK TO TOP</a>
           </li>
-          <% if current_user.nil? %>
-          <li><%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %></li>
-        <% else %>
-          <li><%= link_to articles_url, class: 'login-button' do %>BLOG<% end %><li>
-          <% end %>
         </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li>
-            <a href="/#about" style="color: black;">ABOUT</a>
-          </li>
-          <li>
-            <a href="/#skills" style="color: black;">SKILLS</a>
-          </li>
-          <li>
-            <a href="/#projects" style="color: black;">PROJECTS</a>
-          </li>
-          <li>
-            <a href="/#contact" style="color: black;">CONTACT US</a>
-          </li>
-        </li>
-        <li>
-          <a href="mobile.html" style="color: black;">BLOG</a>
-        </li>
-
-      </ul>
-    </div>
-  </nav>
-</div>
-<%= yield %>
-</body>
-<footer class="page-footer black">
-<div class="container">
-  <div class="row">
-    <div class="col l6 s12">
-      <h5 class="white-text">Footer Content</h5>
-      <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-    </div>
-    <div class="col l4 offset-l2 s12">
-      <h5 class="white-text">Links</h5>
-      <ul>
-        <li>
-          <a class="grey-text text-lighten-3" href="/#!">Link 1</a>
-        </li>
-        <li>
-          <a class="grey-text text-lighten-3" href="/#!">Link 2</a>
-        </li>
-        <li>
-          <a class="grey-text text-lighten-3" href="/#!">Link 3</a>
-        </li>
-        <li>
-          <a class="grey-text text-lighten-3" href="/#!">Link 4</a>
-        </li>
-      </ul>
+      </div>
     </div>
   </div>
-</div>
-<a class="grey-text text-lighten-4 right" href="/#!">More Links</a>
-<div class="footer-copyright">
+  <% if current_user.nil? %>
+<% else %>
   <div class="container">
-    <p>
-      © Newton Kiragu
 
-    </div>
+    <%= link_to articles_url, class: 'grey-text text-lighten-4' do %>BLOG<% end %>
   </div>
-</footer>
+  <% end %>
+  <div class="footer-copyright">
+    <div class="container">
+      <p>
+        © Newton Kiragu
+
+      </div>
+    </div>
+  </footer>
 
 </html>
